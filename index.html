@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoEngage Event Tracking</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Tracking Form</h1>
+        <form id="event-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.moengage.com/release/dc_1/moe_webSdk.min.latest.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
