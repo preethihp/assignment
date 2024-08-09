@@ -15,8 +15,8 @@ document.getElementById('event-form').addEventListener('submit', function(event)
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
 
-    Moengage.add_email(email);
-    Moengage.add_first_name(name);
+    Moengage.add_email("test@gmail.com");
+    Moengage.add_first_name("Preethi");
 
     const eventName = "Form_Submitted";
     
