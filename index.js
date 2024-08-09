@@ -20,8 +20,7 @@ document.getElementById('event-form').addEventListener('submit', function(event)
     
         Moengage.track_event(eventName, {
             "name": name,
-            "email": email,
-            "password":password
+            "email": email
         }).then(() => {
             alert('Event tracked successfully!');
         }).catch((error) => {
