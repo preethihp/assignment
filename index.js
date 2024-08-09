@@ -5,7 +5,8 @@ var moeAppID = "PBW9V6VMZM36LC5735AYWUSI";
  
 Moengage = moe({
   app_id: moeAppID,
-  debug_logs: 0
+  debug_logs: 0,
+  disableCookies: true,
 });
 
 document.getElementById('event-form').addEventListener('submit', function(event) {
