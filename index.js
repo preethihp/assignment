@@ -12,22 +12,40 @@ Moengage = moe({
 document.getElementById('event-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
+    // Check if a unique user ID already exists in local storage
+    let uniqueUserID = localStorage.getItem('uniqueUserID');
+    
+    // If not, generate a new one and save it in local storage
+    if(!uniqueUserID) {
+        uniqueUserID = generateUUID(); // Replace this with a function that generates a UUID
+        localStorage.setItem('uniqueUserID', uniqueUserID);
+    }
+    
+    Moengage.update_unique_user_id(uniqueUserID);
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
 
-    Moengage.add_email("test@gmail.com");
-    Moengage.add_first_name("Preethi");
+    Moengage.add_email(email);
+    Moengage.add_first_name(name);
 
     const eventName = "Form_Submitted";
-    
-    
-        Moengage.track_event(eventName, {
-            "name": name,
-            "email": email
-        }).then(() => {
-            alert('Event tracked successfully!');
-        }).catch((error) => {
-            console.error('Error tracking event:', error);
-        });
-    
+    Moengage.track_event(eventName, {
+        "name": name,
+        "email": email
+    }).then(() => {
+        alert('Event tracked successfully!');
+    }).catch((error) => {
+        console.error('Error tracking event:', error);
+    });
 });
+
+function generateUUID() {
+    // Placeholder for actual UUID generation logic
+    // There are many libraries available that can generate UUIDs, e.g., uuid npm package
+    return 'xxxx-xxxx-xxxx-xxxx'.replace(/[x]/g, function(c) {
+        var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
