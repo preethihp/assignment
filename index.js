@@ -6,7 +6,7 @@ document.getElementById('event-form').addEventListener('submit', function(event)
 
     Moengage.add_email(email);
     Moengage.add_first_name(name);
-    Moengage.update_unique_user_id(NEW_UNIQUE_ID);
+    
    
 
     const eventName = "Form_Submitted";
